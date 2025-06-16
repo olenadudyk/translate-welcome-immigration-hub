@@ -111,19 +111,52 @@ const Index = () => {
 
   const exampleDocuments = [
     {
-      title: "Birth Certificate Translation Example",
-      description: "Original Spanish birth certificate with certified English translation",
-      pdfUrl: "/examples/birth-certificate-example.pdf"
+      title: "Birth Certificate Translation",
+      description: "Original document with certified English translation",
+      beforeTitle: "Original Birth Certificate",
+      afterTitle: "Certified Translation + Certificate",
+      beforePdfUrl: "/examples/birth-certificate-original.pdf",
+      afterPdfUrl: "/examples/birth-certificate-translated.pdf"
     },
     {
-      title: "Marriage Certificate Translation Example", 
-      description: "French marriage certificate with USCIS-compliant translation",
-      pdfUrl: "/examples/marriage-certificate-example.pdf"
+      title: "Marriage Certificate Translation", 
+      description: "Complete marriage certificate translation with USCIS compliance",
+      beforeTitle: "Original Marriage Certificate",
+      afterTitle: "Certified Translation + Certificate",
+      beforePdfUrl: "/examples/marriage-certificate-original.pdf",
+      afterPdfUrl: "/examples/marriage-certificate-translated.pdf"
     },
     {
-      title: "Diploma Translation Example",
-      description: "University diploma translation with certification letter",
-      pdfUrl: "/examples/diploma-translation-example.pdf"
+      title: "Diploma Translation",
+      description: "University diploma with official translation and certification",
+      beforeTitle: "Original Diploma",
+      afterTitle: "Certified Translation + Certificate",
+      beforePdfUrl: "/examples/diploma-original.pdf",
+      afterPdfUrl: "/examples/diploma-translated.pdf"
+    },
+    {
+      title: "Apostille Document Translation",
+      description: "Apostilled document with certified translation",
+      beforeTitle: "Original Apostille Document",
+      afterTitle: "Certified Translation + Certificate",
+      beforePdfUrl: "/examples/apostille-original.pdf",
+      afterPdfUrl: "/examples/apostille-translated.pdf"
+    },
+    {
+      title: "Passport Translation",
+      description: "Passport pages with complete certified translation",
+      beforeTitle: "Original Passport",
+      afterTitle: "Certified Translation + Certificate",
+      beforePdfUrl: "/examples/passport-original.pdf",
+      afterPdfUrl: "/examples/passport-translated.pdf"
+    },
+    {
+      title: "Bank Statement Translation",
+      description: "Financial document translation for immigration purposes",
+      beforeTitle: "Original Bank Statement",
+      afterTitle: "Certified Translation + Certificate",
+      beforePdfUrl: "/examples/bank-statement-original.pdf",
+      afterPdfUrl: "/examples/bank-statement-translated.pdf"
     }
   ];
 
@@ -282,31 +315,50 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Translation Examples
+              Translation Examples - Before & After
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See examples of our professional translation work and certification format
+              See how we transform your original documents into USCIS-compliant certified translations
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
             {exampleDocuments.map((doc, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
+                <CardHeader className="pb-3">
                   <CardTitle className="text-lg">{doc.title}</CardTitle>
-                  <CardDescription>{doc.description}</CardDescription>
+                  <CardDescription className="text-sm">{doc.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-blue-50 border-2 border-dashed border-blue-200 rounded-lg p-8 text-center mb-4">
-                    <FileText className="h-12 w-12 text-blue-400 mx-auto mb-3" />
-                    <p className="text-sm text-blue-600 font-medium">PDF Document</p>
-                    <p className="text-xs text-gray-500 mt-1">Click to view example</p>
+                  {/* Before Example */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700 mb-2">{doc.beforeTitle}</h4>
+                    <div className="bg-red-50 border-2 border-dashed border-red-200 rounded-lg p-6 text-center mb-3">
+                      <FileText className="h-10 w-10 text-red-400 mx-auto mb-2" />
+                      <p className="text-xs text-red-600 font-medium">Original Document</p>
+                      <p className="text-xs text-gray-500 mt-1">Click to view</p>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full text-xs" asChild>
+                      <a href={doc.beforePdfUrl} target="_blank" rel="noopener noreferrer">
+                        View Original
+                      </a>
+                    </Button>
                   </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700" asChild>
-                    <a href={doc.pdfUrl} target="_blank" rel="noopener noreferrer">
-                      View Example
-                    </a>
-                  </Button>
+
+                  {/* After Example */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-700 mb-2">{doc.afterTitle}</h4>
+                    <div className="bg-green-50 border-2 border-dashed border-green-200 rounded-lg p-6 text-center mb-3">
+                      <FileText className="h-10 w-10 text-green-400 mx-auto mb-2" />
+                      <p className="text-xs text-green-600 font-medium">Certified Translation</p>
+                      <p className="text-xs text-gray-500 mt-1">Click to view</p>
+                    </div>
+                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-xs" asChild>
+                      <a href={doc.afterPdfUrl} target="_blank" rel="noopener noreferrer">
+                        View Translation
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -317,7 +369,7 @@ const Index = () => {
               View More Examples
             </Button>
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Start Translation
+              Start Your Translation
             </Button>
           </div>
         </div>
