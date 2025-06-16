@@ -176,7 +176,7 @@ const Index = () => {
             USCIS Accepted Certified Immigration Translations
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Professional Document
+            Certified Documents
             <span className="text-blue-600 block">Translation Services</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -184,6 +184,17 @@ const Index = () => {
             and legal proceedings. Fast, accurate, and guaranteed acceptance.
           </p>
           
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg">
+              Upload Documents Now
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
+              <Phone className="mr-2 h-5 w-5" />
+              Call (555) 123-4567
+            </Button>
+          </div>
+
           {/* Pricing Info */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
             <div className="flex items-center justify-center mb-2">
@@ -194,19 +205,8 @@ const Index = () => {
               Starting at $0.10 per word or from $25 per page
             </p>
             <p className="text-sm text-gray-600 mt-2">
-              Plus notary services available for our clients
+              Professional notary services available for additional fee
             </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg">
-              Upload Documents Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call (555) 123-4567
-            </Button>
           </div>
           
           {/* Trust Indicators */}
