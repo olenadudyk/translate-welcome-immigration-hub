@@ -3,39 +3,59 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Clock, Shield, Users, FileText, Globe, Star, ArrowRight, Phone, Mail, MessageSquare } from 'lucide-react';
+import { CheckCircle, Clock, Shield, Users, FileText, Globe, Star, ArrowRight, Phone, Mail, MessageSquare, Award, Zap } from 'lucide-react';
 
 const Index = () => {
   const services = [
     {
-      title: "Birth Certificates",
-      description: "Certified translations of birth certificates for visa applications and citizenship processes",
-      icon: FileText
-    },
-    {
-      title: "Marriage Certificates", 
-      description: "Official translations of marriage documents for family-based immigration",
+      title: "Marriage Certificate Translation",
+      description: "Official translation of marriage certificates for family-based immigration applications",
       icon: Users
     },
     {
-      title: "Educational Documents",
-      description: "Diplomas, transcripts, and academic records for student visas and credential evaluation",
+      title: "Apostille Translation", 
+      description: "Certified translation services for apostilled documents from all countries",
+      icon: Award
+    },
+    {
+      title: "Diploma Translation",
+      description: "Academic credential translations for student visas and professional licensing",
       icon: FileText
     },
     {
-      title: "Legal Documents",
-      description: "Court records, affidavits, and legal papers for immigration proceedings",
+      title: "Birth Certificate Translation",
+      description: "Certified birth certificate translations for citizenship and visa applications",
+      icon: FileText
+    },
+    {
+      title: "Contract Translation",
+      description: "Legal contract and agreement translations for business immigration",
       icon: Shield
     },
     {
-      title: "Medical Records",
-      description: "Medical certificates and health documents for immigration medical exams",
+      title: "Driver's License Translation",
+      description: "Official driver's license translations for license transfers and applications",
       icon: FileText
     },
     {
-      title: "Employment Records",
-      description: "Work certificates and employment letters for work-based visas",
-      icon: Users
+      title: "Immigration Document Translation",
+      description: "Complete immigration paperwork translation services for all USCIS forms",
+      icon: Globe
+    },
+    {
+      title: "Bank Statement Translation",
+      description: "Financial document translations for visa sponsorship and immigration",
+      icon: FileText
+    },
+    {
+      title: "Passport Translation",
+      description: "Passport and travel document translations for visa applications",
+      icon: Globe
+    },
+    {
+      title: "Death Certificate Translation",
+      description: "Certified death certificate translations for inheritance and legal proceedings",
+      icon: FileText
     }
   ];
 
@@ -92,6 +112,7 @@ const Index = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
             <a href="#process" className="text-gray-600 hover:text-blue-600 transition-colors">Process</a>
+            <a href="#examples" className="text-gray-600 hover:text-blue-600 transition-colors">Examples</a>
             <a href="#testimonials" className="text-gray-600 hover:text-blue-600 transition-colors">Reviews</a>
             <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
           </nav>
@@ -105,15 +126,15 @@ const Index = () => {
       <section className="bg-gradient-to-br from-blue-50 to-white py-20">
         <div className="container mx-auto px-4 text-center">
           <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
-            USCIS Accepted Translations
+            USCIS Accepted Certified Translations
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Professional Immigration
+            Professional Document
             <span className="text-blue-600 block">Translation Services</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Get your documents translated by certified professionals for USCIS, visa applications, 
-            and immigration proceedings. Fast, accurate, and guaranteed acceptance.
+            Get your documents translated by certified professionals for USCIS, immigration applications, 
+            and legal proceedings. Fast, accurate, and guaranteed acceptance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg">
@@ -148,15 +169,128 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Quick CTA Strip */}
+      <section className="bg-blue-600 py-4">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="text-white mb-4 md:mb-0">
+              <span className="text-lg font-semibold">Need your documents translated today? </span>
+              <span className="text-blue-100">Get started in under 2 minutes.</span>
+            </div>
+            <div className="flex gap-3">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Upload Now
+              </Button>
+              <Button className="bg-white text-blue-600 hover:bg-gray-100">
+                <Zap className="mr-2 h-4 w-4" />
+                Rush Service
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Translate.com?
+              Certified Translation Services
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We specialize in immigration document translation with unmatched expertise and reliability
+              We provide professional translation services for all types of documents required for immigration, legal, and official purposes
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-blue-600">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center mb-2">
+                    <service.icon className="h-6 w-6 text-blue-600 mr-3" />
+                    <CardTitle className="text-lg">{service.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <CardDescription className="text-sm mb-4">
+                    {service.description}
+                  </CardDescription>
+                  <div className="flex justify-between items-center">
+                    <Button variant="outline" size="sm" className="text-xs">
+                      Get Quote
+                    </Button>
+                    <span className="text-xs text-gray-500">24-48 hrs</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">Don't see your document type? We translate all types of documents.</p>
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              View All Services
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Examples Section */}
+      <section id="examples" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Translation Examples
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              See examples of our professional translation work and certification format
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-center">Before Translation</h3>
+              <div className="bg-gray-100 p-6 rounded border-2 border-dashed border-gray-300 min-h-[300px] flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                  <FileText className="h-16 w-16 mx-auto mb-4" />
+                  <p className="text-lg font-medium">Original Document</p>
+                  <p className="text-sm">Birth Certificate (Spanish)</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-center">After Translation</h3>
+              <div className="bg-blue-50 p-6 rounded border-2 border-blue-200 min-h-[300px] flex items-center justify-center">
+                <div className="text-center text-blue-700">
+                  <CheckCircle className="h-16 w-16 mx-auto mb-4" />
+                  <p className="text-lg font-medium">Certified Translation</p>
+                  <p className="text-sm">USCIS Compliant + Certificate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="mr-4">
+              View More Examples
+            </Button>
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              Start Translation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Our Translation Services?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We specialize in certified document translation with unmatched expertise and reliability
             </p>
           </div>
           
@@ -178,41 +312,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Immigration Document Translation Services
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We translate all types of documents required for immigration applications
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex items-center mb-3">
-                    <service.icon className="h-8 w-8 text-blue-600 mr-3" />
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base mb-4">
-                    {service.description}
-                  </CardDescription>
-                  <Button variant="outline" className="w-full">
-                    Get Quote
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Process Section */}
       <section id="process" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
@@ -221,7 +320,7 @@ const Index = () => {
               Simple 3-Step Process
             </h2>
             <p className="text-lg text-gray-600">
-              Getting your immigration documents translated is easy
+              Getting your documents translated is easy and secure
             </p>
           </div>
 
@@ -267,7 +366,7 @@ const Index = () => {
               What Our Clients Say
             </h2>
             <p className="text-lg text-gray-600">
-              Thousands of successful immigration cases with our translations
+              Thousands of successful cases with our certified translations
             </p>
           </div>
 
@@ -296,7 +395,7 @@ const Index = () => {
             Ready to Get Your Documents Translated?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of successful immigration cases. Upload your documents now for a free quote.
+            Join thousands of successful cases. Upload your documents now for a free quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
@@ -319,7 +418,7 @@ const Index = () => {
               Contact Us
             </h2>
             <p className="text-lg text-gray-600">
-              Have questions? We're here to help with your immigration translation needs
+              Have questions? We're here to help with your translation needs
             </p>
           </div>
 
@@ -364,7 +463,7 @@ const Index = () => {
                 <span className="text-2xl font-bold">Translate.com</span>
               </div>
               <p className="text-gray-400">
-                Professional immigration translation services trusted by thousands worldwide.
+                Professional document translation services trusted by thousands worldwide.
               </p>
             </div>
             
@@ -400,7 +499,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Translate.com. All rights reserved. | Professional Immigration Translation Services</p>
+            <p>&copy; 2024 Translate.com. All rights reserved. | Professional Document Translation Services</p>
           </div>
         </div>
       </footer>
