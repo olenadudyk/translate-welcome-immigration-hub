@@ -168,7 +168,7 @@ const Index = () => {
               Professional notary services available for additional fee
             </p>
             <p className="text-lg text-green-700 mt-3 font-semibold">
-              Online notary services available in all 50 states
+              Online notary services available in all states
             </p>
           </div>
           
