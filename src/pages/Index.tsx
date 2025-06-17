@@ -168,6 +168,9 @@ const Index = () => {
             <p className="text-sm text-gray-600 mt-2">
               Professional notary services available for additional fee
             </p>
+            <p className="text-sm text-green-700 mt-2 font-medium">
+              Online notary services available in all 50 states
+            </p>
           </div>
           
           {/* Trust Indicators */}
