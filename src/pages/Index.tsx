@@ -240,10 +240,7 @@ const Index = () => {
                   <CardDescription className="text-sm mb-4">
                     {service.description}
                   </CardDescription>
-                  <div className="flex justify-between items-center">
-                    <Button variant="outline" size="sm" className="text-xs" asChild>
-                      <a href={service.url}>Learn More</a>
-                    </Button>
+                  <div className="flex justify-end items-center">
                     <span className="text-xs text-gray-500">24-48 hrs</span>
                   </div>
                 </CardContent>
