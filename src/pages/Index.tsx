@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -168,7 +167,7 @@ const Index = () => {
             <p className="text-sm text-gray-600 mt-2">
               Professional notary services available for additional fee
             </p>
-            <p className="text-sm text-green-700 mt-2 font-medium">
+            <p className="text-lg text-green-700 mt-3 font-semibold">
               Online notary services available in all 50 states
             </p>
           </div>
