@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -108,45 +109,6 @@ const Index = () => {
     }
   ];
 
-  const exampleDocuments = [
-    {
-      title: "Birth Certificate Translation",
-      description: "Professional certified English translation with USCIS compliance",
-      translatedTitle: "Certified Translation + Certificate",
-      translatedPdfUrl: "/examples/birth-certificate-translated.pdf"
-    },
-    {
-      title: "Marriage Certificate Translation", 
-      description: "Complete marriage certificate translation with USCIS compliance",
-      translatedTitle: "Certified Translation + Certificate",
-      translatedPdfUrl: "/examples/marriage-certificate-translated.pdf"
-    },
-    {
-      title: "Diploma Translation",
-      description: "University diploma with official translation and certification",
-      translatedTitle: "Certified Translation + Certificate",
-      translatedPdfUrl: "/examples/diploma-translated.pdf"
-    },
-    {
-      title: "Apostille Document Translation",
-      description: "Apostilled document with certified translation",
-      translatedTitle: "Certified Translation + Certificate",
-      translatedPdfUrl: "/examples/apostille-translated.pdf"
-    },
-    {
-      title: "Passport Translation",
-      description: "Passport pages with complete certified translation",
-      translatedTitle: "Certified Translation + Certificate",
-      translatedPdfUrl: "/examples/passport-translated.pdf"
-    },
-    {
-      title: "Bank Statement Translation",
-      description: "Financial document translation for immigration purposes",
-      translatedTitle: "Certified Translation + Certificate",
-      translatedPdfUrl: "/examples/bank-statement-translated.pdf"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -159,7 +121,6 @@ const Index = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
             <a href="#process" className="text-gray-600 hover:text-blue-600 transition-colors">Process</a>
-            <a href="#examples" className="text-gray-600 hover:text-blue-600 transition-colors">Examples</a>
             <a href="#testimonials" className="text-gray-600 hover:text-blue-600 transition-colors">Reviews</a>
             <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
           </nav>
@@ -189,10 +150,10 @@ const Index = () => {
               Upload Documents Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
+            <div className="bg-gray-100 text-gray-700 px-8 py-3 text-lg rounded-md cursor-default flex items-center">
               <Phone className="mr-2 h-5 w-5" />
               Call (555) 123-4567
-            </Button>
+            </div>
           </div>
 
           {/* Pricing Info */}
@@ -292,55 +253,6 @@ const Index = () => {
             <p className="text-gray-600 mb-6">Don't see your document type? We translate all types of documents for immigration purposes.</p>
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
               View All Services
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Examples Section */}
-      <section id="examples" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Professional Translation Examples
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See examples of our USCIS-compliant certified translations with official certificates
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
-            {exampleDocuments.map((doc, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg">{doc.title}</CardTitle>
-                  <CardDescription className="text-sm">{doc.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-700 mb-2">{doc.translatedTitle}</h4>
-                    <div className="bg-green-50 border-2 border-dashed border-green-200 rounded-lg p-6 text-center mb-3">
-                      <FileText className="h-10 w-10 text-green-400 mx-auto mb-2" />
-                      <p className="text-xs text-green-600 font-medium">Certified Translation</p>
-                      <p className="text-xs text-gray-500 mt-1">Click to view example</p>
-                    </div>
-                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-xs" asChild>
-                      <a href={doc.translatedPdfUrl} target="_blank" rel="noopener noreferrer">
-                        View Translation Example
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button size="lg" variant="outline" className="mr-4">
-              View More Examples
-            </Button>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Start Your Translation
             </Button>
           </div>
         </div>
