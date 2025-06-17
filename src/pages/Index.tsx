@@ -206,10 +206,10 @@ const Index = () => {
               <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
                 Upload Now
               </Button>
-              <Button className="bg-white text-blue-600 hover:bg-gray-100">
+              <div className="bg-white text-blue-600 px-4 py-2 rounded-md cursor-default flex items-center">
                 <Zap className="mr-2 h-4 w-4" />
                 Rush Service
-              </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -297,9 +297,6 @@ const Index = () => {
               for our clients. Our licensed notaries can authenticate your translated documents to meet 
               all legal requirements for immigration and official purposes.
             </p>
-            <Button className="mt-6 bg-blue-600 hover:bg-blue-700">
-              Learn More About Notary Services
-            </Button>
           </div>
         </div>
       </section>
